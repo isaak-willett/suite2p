@@ -88,14 +88,17 @@ def detect_and_extract(ops):
 
     ### apply default classifier ###
     if len(stat) > 0:
-        classfile = os.path.join(os.path.abspath(os.path.dirname(__file__)),
-            "../classifiers/classifier_user.npy",
-        )
-        if not os.path.isfile(classfile):
-            classorig = os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                "../classifiers/classifier.npy"
+        if 'classfile' in ops:
+            classfile = ops['classfile']
+        else:
+            classfile = os.path.join(os.path.abspath(os.path.dirname(__file__)),
+                "../classifiers/classifier_user.npy",
             )
-            shutil.copy(classorig, classfile)
+            if not os.path.isfile(classfile):
+                classorig = os.path.join(os.path.abspath(os.path.dirname(__file__)),
+                    "../classifiers/classifier.npy"
+                )
+                shutil.copy(classorig, classfile)
         print('NOTE: applying classifier %s'%classfile)
         iscell = classifier.run(classfile, stat, keys=['npix_norm', 'compact', 'skew'])
         if 'preclassify' in ops and ops['preclassify'] > 0.0:
