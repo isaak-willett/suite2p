@@ -2,7 +2,7 @@ name: suite2p
 dependencies:
   - python>3.5
   - pip
-  - mkl_fft
+  - mkl-fft
   - mkl=2019.3
   - numpy>=1.16
   - numba>=0.43.1
