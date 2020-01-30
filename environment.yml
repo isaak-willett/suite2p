@@ -12,8 +12,6 @@ dependencies:
   - scikit-image
   - scikit-learn
   - pip:
-    - PyQt5<5.12
-    - pyqtgraph
     - natsort
     - scanimage-tiff-reader
     - rastermap==0.1.0

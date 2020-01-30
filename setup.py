@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/MouseLand/suite2p",
     packages=setuptools.find_packages(),
-    install_requires = ['pyqtgraph', 'PyQt5', 'numpy>=1.13.0', 'scipy', 'h5py', 'natsort','mkl_fft',
+    install_requires = ['numpy>=1.13.0', 'scipy', 'h5py', 'natsort','mkl_fft',
                         'numba','scikit-image', 'scikit-learn', 'matplotlib','rastermap>=0.1.0',
                         'scanimage-tiff-reader'],
     include_package_data=True,
